@@ -1,0 +1,51 @@
+﻿@model TicariOtomasyon.Models.Siniflar.Urunler
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Yeni Ürün Ekleme Sayfası</h2>
+<br />
+
+
+<form class="form-group" method="post">
+    <label>Ürün Ad</label>
+    @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+    <br />
+
+    <label>Marka</label>
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    <br />
+
+    <label>Stok</label>
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+
+    <label>Alış Fiyatı</label>
+    @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+    <br />
+
+    <label>Satış Fiyatı</label>
+    @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+    <br />
+
+    <label>Kategori</label>
+    @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+
+    <br />
+
+    <label>Ürün Görsel</label>
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })<br />
+
+    <label>Durum</label>
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+
+    <br />
+    <button class="btn btn-primary" >Ürün Ekle</button>
+
+
+</form>
+
+

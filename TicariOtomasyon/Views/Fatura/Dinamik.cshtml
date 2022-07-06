@@ -1,0 +1,79 @@
+﻿
+
+                                <table class="table table-bordered">
+
+                                    <tbody>
+
+                                        <tr>
+
+                                            <th>Product</th>
+
+                                            <th>Quantity</th>
+
+                                            <th>Unit Price</th>
+
+                                            <th>Total</th>
+
+                                        </tr>
+
+                                        @{
+
+                                            var totalBill = 0;
+
+                                        }
+
+                                        @foreach (var order in item.TblSiparis)
+
+                                        {
+
+                                            <tr>
+
+                                                <td>@order.urun</td>
+
+                                                <td>@order.Adet</td>
+
+                                                <td>@order.Fiyat</td>
+
+                                                <td>@order.Toplam</td>
+
+                                            </tr>
+
+                                            totalBill = totalBill + @Convert.ToInt32(order.Toplam);
+
+                                        }
+
+                                    </tbody>
+
+                                </table>
+
+                                <span class="pull-right" style="margin-right:100px;"><strong>Total Bill :  </strong> @totalBill</span>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        }
+
+    }
+
+    else
+
+    {
+
+        <div class="panel-body">
+
+            <h3 style="color:red;">Empty!</h3>
+
+        </div>
+
+
+
+    }
+
+</div>

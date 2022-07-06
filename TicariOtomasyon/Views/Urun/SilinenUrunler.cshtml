@@ -1,0 +1,38 @@
+﻿@using TicariOtomasyon.Models.Siniflar
+@{
+    ViewBag.Title = "SilinenUrunler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Silinen Ürünler</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ürün</th>
+        <th>Marka</th>
+        <th>Stok</th>
+        <th>Alış Fiyatı</th>
+        <th>Satış Fiyatı</th>
+        <th>Kategori</th>
+        <th>Ürün Görsel</th>
+        <th>Ekle</th>
+    </tr>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <th>@i.UrunID</th>
+                <td>@i.UrunAd</td>
+                <td>@i.Marka</td>
+                <td>@i.Stok</td>
+                <td>@i.AlisFiyat</td>
+                <td>@i.SatisFiyat</td>
+                <td>@i.Kategori.KategoriAd</td>
+                <td>@i.UrunGorsel</td>
+                <td><a class="btn btn-danger" href="/Urun/GeriEkle/@i.UrunID">Listeye Geri Ekle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

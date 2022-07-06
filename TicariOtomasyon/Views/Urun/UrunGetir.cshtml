@@ -1,0 +1,49 @@
+﻿@model TicariOtomasyon.Models.Siniflar.Urunler
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Ürün Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Ürün ID</label>
+        @Html.TextBoxFor(x => x.UrunID, new { @class = "form-control", @readonly = "readonly" })
+        <br />
+
+        <label>Ürün Ad</label>
+        @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+        <br />
+
+        <label>Marka</label>
+        @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+        <br />
+
+        <label>Stok</label>
+        @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+        <br />
+
+        <label>Alış Fiyat</label>
+        @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+        <br />
+
+        <label>Satış Fiyat</label>
+        @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+        <br />
+
+        <label>Görsel</label>
+        @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+        <br />
+
+        <label>Ürün Kategori</label>
+        @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        <br />
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}

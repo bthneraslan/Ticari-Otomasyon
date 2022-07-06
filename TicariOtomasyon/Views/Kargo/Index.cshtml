@@ -1,0 +1,38 @@
+﻿@using TicariOtomasyon.Models.Siniflar
+@model List<KargoDetay>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+
+@using (Html.BeginForm("Index", "Kargo", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Numarası: @Html.TextBox("p")
+        <input www.google.com type="submit" value="Ara" />
+    </p>
+}
+<h2>Kargolar</h2>
+<br />
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Personel</th>
+        <th>Alıcı</th>
+        <th>Tarih</th>
+        <th>Detaylar</th>
+    </tr>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.Personel</td>
+                <td>@i.Alici</td>
+                <td>@i.Tarih</td>
+                <td><a href="/Kargo/KargoTakip/@i.TakipKodu" style="color:white;background-color:lightcoral" class="btn btn-group">Detaylar</a></td>
+
+            </tr>
+        }
+</table>
+<a href="/Kargo/KargoEkle" class="btn btn-primary">Yeni Kargo</a>
+

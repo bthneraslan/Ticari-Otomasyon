@@ -1,0 +1,39 @@
+﻿@using TicariOtomasyon.Models.Siniflar
+@model List<Cariler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Cari Listesi</h2>
+<br />
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Mail</th>
+        <th>Şehir</th>  
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <th>@i.CariID</th>
+                <td>@i.CariAd</td>
+                <td>@i.CariSoyad</td>
+                <td>@i.CariMail</td>
+                <td>@i.CariSehir</td>
+                <td><a href="/Cariler/CariSil/@i.CariID" class="btn btn-danger" style="color:white">Sil</a></td>
+                <td><a href="/Cariler/CariGetir/@i.CariID" class="btn btn-success">Güncelle</a></td>
+                <td><a href="/Cariler/CariSatis/@i.CariID" class="btn btn-default" style="background-color:lightcoral;color:white" >Satış Geçmişi</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Cariler/CariEkle" class="btn btn-primary">Cari Ekle</a> 
+<a href="/Cariler/SilinenCariler" class="btn btn-warning">Silinen Cariler</a> 
+

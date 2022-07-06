@@ -1,0 +1,36 @@
+﻿@using TicariOtomasyon.Models.Siniflar
+@model List<FaturaKalem>
+@{
+    ViewBag.Title = "FaturDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Detay Sayfası</h2>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>Fatura Kalem ID</th>
+        <th>Açıklama</th>
+        <th>Miktar</th>
+        <th>Birim Fiyat</th>
+        <th>Tutar</th>
+    </tr>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.FaturaKalemID</td>
+                <td>@i.Acıklama</td>
+                <td>@i.Miktar</td>
+                <td>@i.BirimFiyat</td>
+                <td>@i.Tutar</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+<td><a href="/Fatura/YeniKalem/" class="btn btn-warning">Yeni Kalem Girişi</a></td>
+

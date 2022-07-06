@@ -1,0 +1,47 @@
+﻿@using TicariOtomasyon.Models.Siniflar
+@model List<Urunler>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Ürünler Tablosu</h3>
+
+                
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0" style="height: 300px;">
+                <table class="table table-head-fixed text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ürün Ad</th>
+                            <th>Marka</th>
+                            <th>Stok</th>
+                            <th>Alış Fiyat</th>
+                            <th>Satış Fiyat</th>
+                            <th>Kategori</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var i in Model)
+                        {
+                            <tr>
+                                <td>@i.UrunID</td>
+                                <td>@i.UrunAd</td>
+                                <td>@i.Marka</td>
+                                <td>@i.Stok</td>
+                                <td>@i.AlisFiyat</td>
+                                <td>@i.SatisFiyat</td>
+                                <td>@i.Kategori.KategoriAd</td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
